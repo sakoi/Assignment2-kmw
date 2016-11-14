@@ -1,8 +1,77 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: HaloHandletter;
+  src: url(../fonts/HaloHandletter.otf);
 }
 
-a {
-  color: #00B7FF;
+body {
+  margin: auto;
+}
+
+/* H Tags */
+h1 {
+  font-family: HaloHandletter;
+  font-size: 150px;
+  text-align: center;
+}
+
+/* Menu */
+.menu{
+  margin: auto;
+  background-color: #FF0061;
+  color: #fff;
+  height: 2.5em;
+}
+
+.menu li{
+  display: inline-block;
+  margin-top: 1em;
+
+}
+
+/* Links */
+a, a:link, a:visited, a:active, a:hover {
+  text-decoration: none;
+  color: #FF0061;
+}
+
+.menu a, .menu a:link, .menu a:visited, .menu a:active, .menu a:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+
+
+/* Table */
+.container {
+  padding: 0 50px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #FF0061;
+  color: white;
+}
+
+
+
+/* Footer */
+footer {
+  background-color: #404040;
+  text-align: center;
+  color: #FFF;
+  bottom: 0;
+  position: absolute;
+  padding: 5px 0;
+  width: 100%;
 }

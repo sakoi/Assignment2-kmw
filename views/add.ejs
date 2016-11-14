@@ -1,0 +1,61 @@
+<% include partials/header.ejs%>
+
+<h1><%= title %></h1>
+
+<form method="post">
+    <div>
+        <label for="firstName">Customer First Name:</label>
+        <input name="firstName" id="firstName" required />
+    </div>
+
+    <div>
+        <label for="lastName">Customer Last Name: </label>
+        <input name="lastName" id="lastName" required />
+    </div>
+
+    <div>
+        <label for="address">Shipping Address: </label>
+        <input name="address" id="address" required />
+    </div>
+
+    <div>
+        <lable for="paymentType">Payment Method: </lable>
+        <select name="paymentType" id="paymentType" required>
+            <option>Interact Debt</option>
+            <option>MasterCard</option>
+            <option>Visa</option>
+        </select>
+    </div>
+
+    <div>
+        <lable for="orderDetail">Order Details: </lable>
+        <select name="orderItem" id="orderItem" required>
+            <option>Adult Hat</option>
+            <option>Child Hat</option>
+            <option>Scarf</option>
+        </select>
+        <select name="orderUnit" id="orderUnit" required>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <select name="orderPom" id="orderPom" required>
+            <option>None</option>
+            <option>Beaver Fur Pom Pom</option>
+            <option>Coyote Fur Pom Pom</option>
+            <option>White Fox Fur Pom Pom</option>
+            <option>Red Fox Fur Pom Pom</option>
+        </select>
+    </div>
+
+    <div>
+        <lable for="orderComment">Order Comments: </lable>
+        <input name="orderComment" id="orderComment" />
+    </div>
+
+    <button>Save</button>
+</form>
+
+<% include partials/footer.ejs%>
