@@ -9,12 +9,15 @@
 <body>
     <nav class="menu">
         <ul>
-
             <li><a href="/">Home</a></li>
             <li><a href="/orders">Orders</a></li>
+
+            <% if (!user) { %>
             <li><a href="/register">Register</a></li>
             <li><a href="/login">Login</a></li>
+            <% }else{%>
             <li><a href="/logout">Logout</a></li>
+            <% } %>
         </ul>
 
 

@@ -3,7 +3,9 @@
 <h1><%= title %></h1>
 
 <div class="container">
-    <a href="orders/add">Add New Order</a>
+    <% if (user) { %>
+        <a href="orders/add">Add New Order</a>
+    <% } %>
 
     <table>
         <tr>
@@ -16,8 +18,10 @@
             <th>Order Quanity</th>
             <th>Order Finish</th>
             <th>Comment</th>
+            <% if (user) { %>
             <th>Edit</th>
             <th>Delete</th>
+            <% } %>
         </tr>
         <% for (var i=0; i < orders.length; i++) { %>
         <tr>
@@ -30,9 +34,10 @@
             <td><%= orders[i].orderUnit %></td>
             <td><%= orders[i].orderAddon %></td>
             <td><%= orders[i].orderComment %></td>
+            <% if (user) { %>
             <td><a class="button" href="/orders/<%= orders[i]._id %>">Edit</a></td>
             <td><a href="/orders/delete/<%= orders[i]._id %>" class="confirmation">Delete</a></td>
-        </tr>
+            <% } %>
         </tr>
         <% } %>
     </table>

@@ -7,7 +7,8 @@ var passport = require('passport');
 router.get('/', function(req, res, next) {
   res.render('index', {
                         title: 'woole owl',
-                        subtitle: 'Order Tracking'
+                        subtitle: 'Order Tracking',
+                        user: req.user
     });
 });
 
@@ -45,7 +46,7 @@ router.get('/login', function(req, res, next) {
     var messages = req.session.messages || [];
 
     res.render('login', {
-        title: 'Login',
+        title: 'login',
         messages: messages,
         user: req.user
     });

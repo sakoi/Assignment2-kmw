@@ -3,6 +3,16 @@ var router = express.Router();
 
 var Order = require('../models/order');
 
+/* Validation of user */
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    }
+    else {
+        res.redirect('/login');
+    }
+}
+
 /* Get handler for /orders */
 router.get('/', function (req, res, next) {
    Order.find(function(err, orders){
@@ -12,21 +22,23 @@ router.get('/', function (req, res, next) {
        }else{
            res.render('orders', {
                title: 'order list',
-               orders: orders
+               orders: orders,
+               user: req.user
            });
        }
    });
 });
 
 /* Get handler for /orders/add */
-router.get('/add', function(req, res, next){
+router.get('/add', isLoggedIn, function(req, res, next){
    res.render('add', {
-        title: 'new order'
+        title: 'new order',
+        user: req.user
    });
 });
 
 /* Post handler for /orders/add */
-router.post('/add', function(req, res, next){
+router.post('/add', isLoggedIn, function(req, res, next){
     Order.create({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -48,7 +60,7 @@ router.post('/add', function(req, res, next){
 });
 
 /* GET handler for /orders/delete/:_id */
-router.get('/delete/:_id', function(req, res, next) {
+router.get('/delete/:_id', isLoggedIn, function(req, res, next) {
     var _id = req.params._id;
 
     Order.remove( { _id: _id }, function(err) {
@@ -62,7 +74,7 @@ router.get('/delete/:_id', function(req, res, next) {
 
 
 /* GET handler for /orders/:_id  */
-router.get('/:_id', function(req, res, next) {
+router.get('/:_id', isLoggedIn, function(req, res, next) {
     var _id = req.params._id;
 
     Order.findById(_id,  function(err, order) {
@@ -75,14 +87,14 @@ router.get('/:_id', function(req, res, next) {
             res.render('edit', {
                 title: 'edit order',
                 order: order,
-                //user: req.user
+                user: req.user
             });
         }
     });
 });
 
 /* POST /orders/:_id*/
-router.post('/:_id', function(req, res, next) {
+router.post('/:_id', isLoggedIn, function(req, res, next) {
     // get the id from the url
     var _id = req.params._id;
 
