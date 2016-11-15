@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
 /* Get handler for /orders/add */
 router.get('/add', function(req, res, next){
    res.render('add', {
-        title: 'New Order'
+        title: 'new order'
    });
 });
 

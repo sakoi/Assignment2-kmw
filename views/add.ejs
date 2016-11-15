@@ -2,6 +2,8 @@
 
 <h1><%= title %></h1>
 
+<div class="container">
+
 <form method="post">
     <div>
         <label for="firstName">Customer First Name:</label>
@@ -23,7 +25,18 @@
         <select name="paymentType" class="dropDown" id="paymentType" required>
             <%
             var types = ['Interact Debt', 'MasterCard', 'Visa'];
+            for(var i=0; i<types.length; i++){ %>
+            <option><%= types[i] %></option>
+            <%   }    %>
+        </select>
+    </div>
 
+    <h2>Order Details</h2>
+    <div>
+        <lable for="orderDetail">Item: </lable>
+        <select name="orderItem" class="dropDown" id="orderItem" required>
+            <%
+            var types = ['Knitted Adult Hat', 'Knitted Child Hat', 'Knitted Scarf'];
             for(var i=0; i<types.length; i++){ %>
             <option><%= types[i] %></option>
             <%   }    %>
@@ -31,36 +44,26 @@
     </div>
 
     <div>
-        <lable for="orderDetail">Order Details: </lable>
-        <select name="orderItem" class="dropDown" id="orderItem" required>
-            <%
-            var types = ['Knitted Adult Hat', 'Knitted Child Hat', 'Knitted Scarf'];
-
-            for(var i=0; i<types.length; i++){ %>
-            <option><%= types[i] %></option>
-            <%   }    %>
-        </select>
-
+        <lable for="orderColour">Colour:</lable>
         <select name="orderColour" class="dropDown" id="orderColour" required>
             <%
             var types = ['White', 'Black', 'Brown'];
-
             for(var i=0; i<types.length; i++){ %>
-
-            <option><%= types[i] %></option>
-            <%   }    %>
-        </select>
-
-        <select name="orderUnit" class="dropDown" id="orderUnit" required>
-            <%
-            var types = [ 1, 2, 3, 4, 5];
-
-            for(var i=0; i<types.length; i++){ %>
-
             <option><%= types[i] %></option>
             <%   }    %>
         </select>
     </div>
+    <div>
+        <lable for="orderUnit">Quantity: </lable>
+        <select name="orderUnit" class="dropDown" id="orderUnit" required>
+            <%
+            var types = [ 1, 2, 3, 4, 5];
+            for(var i=0; i<types.length; i++){ %>
+            <option><%= types[i] %></option>
+            <%   }    %>
+        </select>
+    </div>
+
     <div>
         <lable for="orderAddon">Finish: </lable>
         <select name="orderAddon" class="dropDown" id="orderAddon">
@@ -75,11 +78,13 @@
     </div>
 
     <div>
-        <lable for="orderComment">Order Comments: </lable>
+        <lable for="orderComment">Comments: </lable>
         <input name="orderComment" id="orderComment" />
     </div>
 
     <button>Save</button>
 </form>
+
+</div>
 
 <% include partials/footer.ejs%>
