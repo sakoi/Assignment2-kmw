@@ -68,6 +68,18 @@ router.get('/logout', function(req, res, next) {
     res.redirect('/login');
 });
 
+/*GET FACBOOK!!!! */
+router.get('/facebook', passport.authenticate('facebook'), function(req, res, next){
+});
+
+/* FB CALL BACK!! */
+router.get('/facebook/callback', passport.authenticate('facebook', {
+    failureRedirect: 'login',
+    failureMessage: 'Invalid Login'
+}), function(req,res,nex){
+//show cames page
+    res.redirect('/orders')
+});
 
 
 module.exports = router;

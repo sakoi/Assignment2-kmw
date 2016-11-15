@@ -50,7 +50,7 @@ input, select {
   box-sizing: border-box;
 }
 
-form button{
+button{
   width: 100%;
   background-color: #FF0061;
   color: white;
@@ -61,14 +61,24 @@ form button{
   cursor: pointer;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+#login{
+  width:49.8%;
 }
 
-form div{
+#facebook {
+  -webkit-appearance: button;
+  width: 49.8%;
+  background-color: #3b5998;
 
+}
+
+.input{
   background-color: #f2f2f2;
   padding: 10px;
+}
+
+.submit{
+  text-align: center;
 }
 
 /* Table */
