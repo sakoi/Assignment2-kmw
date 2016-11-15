@@ -16,6 +16,28 @@ var mongoose = require('mongoose');
 var config = require('./config/globalVars');
 mongoose.connect(config.db);
 
+//passport
+var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
+var localStrategy = require('passport-local').Strategy; //refeneces
+
+app.use(flash());
+app.use(session({
+  secret: config.secret,
+  resave: true,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+var Account = require('./models/account');
+passport.use(Account.createStrategy());
+
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
