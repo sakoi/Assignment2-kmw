@@ -9,7 +9,10 @@
         <th>Last Name</th>
         <th>Shipping Address</th>
         <th>Payment Method</th>
-        <th>Order Details</th>
+        <th>Order Item</th>
+        <th>Order Colour</th>
+        <th>Order Quanity</th>
+        <th>Order Finish</th>
         <th>Comment</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -20,7 +23,10 @@
         <td><%= orders[i].lastName %></td>
         <td><%= orders[i].address %></td>
         <td><%= orders[i].paymentType %></td>
-        <td><%= orders[i].orderItem %> x<%= orders[i].orderUnit %> - <%= orders[i].orderAddon %></td>
+        <td><%= orders[i].orderItem %></td>
+        <td><%= orders[i].orderColour %></td>
+        <td><%= orders[i].orderUnit %></td>
+        <td><%= orders[i].orderAddon %></td>
         <td><%= orders[i].orderComment %></td>
         <td><a class="button" href="/orders/<%= orders[i]._id %>">Edit</a></td>
         <td><a href="/orders/delete/<%= orders[i]._id %>" class="confirmation">Delete</a></td>

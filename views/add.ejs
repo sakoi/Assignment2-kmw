@@ -20,33 +20,57 @@
 
     <div>
         <lable for="paymentType">Payment Method: </lable>
-        <select name="paymentType" id="paymentType" required>
-            <option>Interact Debt</option>
-            <option>MasterCard</option>
-            <option>Visa</option>
+        <select name="paymentType" class="dropDown" id="paymentType" required>
+            <%
+            var types = ['Interact Debt', 'MasterCard', 'Visa'];
+
+            for(var i=0; i<types.length; i++){ %>
+            <option><%= types[i] %></option>
+            <%   }    %>
         </select>
     </div>
 
     <div>
         <lable for="orderDetail">Order Details: </lable>
-        <select name="orderItem" id="orderItem" required>
-            <option>Adult Hat</option>
-            <option>Child Hat</option>
-            <option>Scarf</option>
+        <select name="orderItem" class="dropDown" id="orderItem" required>
+            <%
+            var types = ['Knitted Adult Hat', 'Knitted Child Hat', 'Knitted Scarf'];
+
+            for(var i=0; i<types.length; i++){ %>
+            <option><%= types[i] %></option>
+            <%   }    %>
         </select>
-        <select name="orderUnit" id="orderUnit" required>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+
+        <select name="orderColour" class="dropDown" id="orderColour" required>
+            <%
+            var types = ['White', 'Black', 'Brown'];
+
+            for(var i=0; i<types.length; i++){ %>
+
+            <option><%= types[i] %></option>
+            <%   }    %>
         </select>
-        <select name="orderPom" id="orderPom" required>
-            <option>None</option>
-            <option>Beaver Fur Pom Pom</option>
-            <option>Coyote Fur Pom Pom</option>
-            <option>White Fox Fur Pom Pom</option>
-            <option>Red Fox Fur Pom Pom</option>
+
+        <select name="orderUnit" class="dropDown" id="orderUnit" required>
+            <%
+            var types = [ 1, 2, 3, 4, 5];
+
+            for(var i=0; i<types.length; i++){ %>
+
+            <option><%= types[i] %></option>
+            <%   }    %>
+        </select>
+    </div>
+    <div>
+        <lable for="orderAddon">Finish: </lable>
+        <select name="orderAddon" class="dropDown" id="orderAddon">
+            <%
+            var types = ['Beaver Fur Pom Pom', 'Raccoon Fur Pom Pom', 'Coyote Fur Pom Pom', 'White Fox Fur Pom Pom', 'Red Fox Fur Pom Pom'];
+
+            for(var i=0; i<types.length; i++){ %>
+
+            <option><%= types[i] %></option>
+            <%   }    %>
         </select>
     </div>
 

@@ -1,0 +1,132 @@
+<% include partials/header.ejs%>
+
+<h1><%= title %></h1>
+
+<form method="post">
+    <div>
+        <label for="firstName">Customer First Name:</label>
+        <input name="firstName" id="firstName" required value="<%= order.firstName %>" />
+    </div>
+
+    <div>
+        <label for="lastName">Customer Last Name: </label>
+        <input name="lastName" id="lastName" required value="<%= order.lastName %>" />
+    </div>
+
+    <div>
+        <label for="address">Shipping Address: </label>
+        <input name="address" id="address" required value="<%= order.address %>" />
+    </div>
+
+    <div>
+        <lable for="paymentType">Payment Method: </lable>
+        <select name="paymentType" id="paymentType" required >
+            <%
+                var types = ['Interact Debt', 'MasterCard', 'Visa'];
+                var selected= '';
+
+                for(var i=0; i<types.length; i++){
+                    if(types[i] == order.paymentType){
+                        selected = ' selected';
+                    }else{
+                        selected = '';
+                    }
+            %>
+
+            <option<%= selected %>>
+                <%= types[i] %>
+            </option>
+             <%   }    %>
+        </select>
+    </div>
+
+    <div>
+        <lable for="orderDetail">Order Details: </lable>
+        <select name="orderItem" id="orderItem" required>
+            <%
+            var types = ['Knitted Adult Hat', 'Knitted Child Hat', 'Knitted Scarf'];
+            var selected= '';
+
+            for(var i=0; i<types.length; i++){
+                if(types[i] == order.orderItem){
+                    selected = ' selected';
+                }else{
+                    selected = '';
+                }
+            %>
+
+            <option<%= selected %>>
+                <%= types[i] %>
+            </option>
+            <%   }    %>
+        </select>
+
+        <select name="orderColour" id="orderColour" required>
+            <%
+            var types = ['White', 'Black', 'Brown'];
+
+            for(var i=0; i<types.length; i++){
+                if(types[i] == order.orderColour){
+                    selected = ' selected';
+                }else{
+                    selected = '';
+                }
+            %>
+
+            <option<%= selected %>>
+                <%= types[i] %>
+            </option>
+            <%   }    %>
+        </select>
+
+        <select name="orderUnit" id="orderUnit" required>
+            <%
+            var types = [ 1, 2, 3, 4, 5];
+            var selected= '';
+
+            for(var i=0; i<types.length; i++){
+                if(types[i] == order.orderUnit){
+                    selected = ' selected';
+                }else{
+                    selected = '';
+                }
+            %>
+
+            <option<%= selected %>>
+                <%= types[i] %>
+            </option>
+            <%   }    %>
+        </select>
+    </div>
+
+    <div>
+        <lable for="orderAddon">Finish: </lable>
+        <select name="orderAddon" id="orderAddon">
+            <%
+            var types = ['Beaver Fur Pom Pom', 'Raccoon Fur Pom Pom', 'Coyote Fur Pom Pom', 'White Fox Fur Pom Pom', 'Red Fox Fur Pom Pom'];
+            var selected= '';
+
+            for(var i=0; i<types.length; i++){
+                if(types[i] == order.orderAddon){
+                    selected = ' selected';
+                }else{
+                    selected = '';
+                }
+            %>
+
+            <option<%= selected %>>
+                <%= types[i] %>
+            </option>
+            <%   }    %>
+        </select>
+    </div>
+
+    <div>
+        <lable for="orderComment">Order Comments: </lable>
+        <input name="orderComment" id="orderComment" value="<%= order.orderComment %>" />
+    </div>
+
+    <button>Save</button>
+</form>
+
+<% include partials/footer.ejs%>

@@ -33,9 +33,10 @@ router.post('/add', function(req, res, next){
         address: req.body.address,
         paymentType: req.body.paymentType,
         orderItem: req.body.orderItem,
+        orderColour: req.body.orderColour,
         orderUnit: req.body.orderUnit,
         orderAddon: req.body.orderAddon,
-        orderComment: req.body.orderCommnet
+        orderComment: req.body.orderComment
     }, function(err, Order){
         if(err){
             console.log(err);
@@ -46,7 +47,7 @@ router.post('/add', function(req, res, next){
     })
 });
 
-/* GET /orders/delete/:_id */
+/* GET handler for /orders/delete/:_id */
 router.get('/delete/:_id', function(req, res, next) {
     var _id = req.params._id;
 
@@ -56,6 +57,27 @@ router.get('/delete/:_id', function(req, res, next) {
             res.render('error', {message: 'Delete Error'});
         }
         res.redirect('/orders');
+    });
+});
+
+
+/* GET handler for /orders/:_id  */
+router.get('/:_id', function(req, res, next) {
+    var _id = req.params._id;
+
+    Order.findById(_id,  function(err, order) {
+        if (err) {
+            console.log(err);
+            res.render('error', { message: 'Could not find Order'});
+        }
+        else {
+            // load the edit form
+            res.render('edit', {
+                title: 'edit order',
+                order: order,
+                //user: req.user
+            });
+        }
     });
 });
 

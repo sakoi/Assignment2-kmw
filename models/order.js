@@ -21,6 +21,10 @@ var orderSchema = new mongoose.Schema({
         type: String,
         required: 'Select a order item'
     },
+    orderColour: {
+        type: String,
+        required: 'Select the colour'
+    },
     orderUnit: {
         type: Number,
         required: 'Select a order amount'
