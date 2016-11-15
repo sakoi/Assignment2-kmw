@@ -81,4 +81,34 @@ router.get('/:_id', function(req, res, next) {
     });
 });
 
+/* POST /orders/:_id*/
+router.post('/:_id', function(req, res, next) {
+    // get the id from the url
+    var _id = req.params._id;
+
+    // instantiate a new Game object & populate it from the form
+    var order = new Order( {
+        _id: _id,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        address: req.body.address,
+        paymentType: req.body.paymentType,
+        orderItem: req.body.orderItem,
+        orderColour: req.body.orderColour,
+        orderUnit: req.body.orderUnit,
+        orderAddon: req.body.orderAddon,
+        orderComment: req.body.orderComment
+    });
+
+    Order.update( { _id: _id }, order, function(err) {
+        if (err) {
+            console.log(err);
+            res.render('error', {message: 'Could not make order changes'});
+        }
+        else {
+            res.redirect('/orders');
+        }
+    });
+});
+
 module.exports = router;
