@@ -13,7 +13,7 @@ function isLoggedIn(req, res, next) {
     }
 }
 
-/* Get handler for /orders */
+/* Get handlerr  fo/orders */
 router.get('/', function (req, res, next) {
    Order.find(function(err, orders){
        if(err){

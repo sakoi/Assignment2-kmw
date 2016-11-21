@@ -3,8 +3,8 @@
   src: url(../fonts/HaloHandletter.otf);
 }
 
-body {
-  margin: auto;
+html, body {
+  margin: 0 auto;
   height: 100%;
 }
 
@@ -20,12 +20,14 @@ h1 {
   margin: auto;
   background-color: #FF0061;
   color: #fff;
-  height: 2.5em;
+  height: 3em;
 }
 
 .menu li{
   display: inline-block;
   margin-top: 1em;
+  margin-left: 5px;
+  margin-right: 5px;
 
 }
 
@@ -84,6 +86,7 @@ button{
 /* Table */
 .container {
   padding: 0 50px;
+  height: 85%;
 }
 
 table {
@@ -104,15 +107,13 @@ th {
 }
 
 
-
 /* Footer */
 footer {
   background-color: #404040;
   text-align: center;
   color: #FFF;
-  bottom: 0;
-  position: relative;
   padding: 5px 0;
-  margin-top:2em;
   width: 100%;
+  height: 2em;
+  margin-top: 2em;
 }

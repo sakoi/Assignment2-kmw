@@ -45,14 +45,17 @@ router.get('/login', function(req, res, next) {
     // get session messages if there are any
     var messages = req.session.messages || [];
 
+    req.session.messages = [];
+
     res.render('login', {
         title: 'login',
         messages: messages,
         user: req.user
+
     });
 
     // clear the messages out of the session
-    req.session.messages = null;
+    //req.session.messages = null;
 });
 
 /* POST handler for /login */
