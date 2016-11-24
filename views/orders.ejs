@@ -1,11 +1,14 @@
 <% include partials/header.ejs %>
-
+<div class="container">
 <h1><%= title %></h1>
 
-<div class="container">
     <% if (user) { %>
         <a href="orders/add">Add New Order</a>
     <% } %>
+
+    <form id="searchBar">
+        <br/><input type="text" name="search" placeholder="Search by name...">
+    </form>
 
     <table>
         <tr>
