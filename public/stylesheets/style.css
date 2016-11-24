@@ -8,6 +8,17 @@ html, body {
   height: 100%;
 }
 
+/* Index */
+#gallery{
+  display: block;
+  margin: 0 auto;
+
+}
+#gallery img{
+  width: 280px;
+  height: 280px;
+}
+
 /* H Tags */
 h1 {
   font-family: HaloHandletter;
