@@ -2,6 +2,7 @@
 
 <h1><%= title %></h1>
 
+<!-- edit order form -->
 <form method="post">
     <div>
         <label for="firstName">Customer First Name:</label>
@@ -22,21 +23,21 @@
         <lable for="paymentType">Payment Method: </lable>
         <select name="paymentType" id="paymentType" required >
             <%
-                var types = ['Interact Debt', 'MasterCard', 'Visa'];
-                var selected= '';
+            //set array of payment types, loop through as user options and selects current order option
+            var types = ['Cash', 'Interact Debt', 'MasterCard', 'Visa'];
+            var selected= '';
 
-                for(var i=0; i<types.length; i++){
-                    if(types[i] == order.paymentType){
-                        selected = ' selected';
-                    }else{
-                        selected = '';
-                    }
+            for(var i=0; i<types.length; i++){
+                if(types[i] == order.paymentType){
+                    selected = ' selected';
+                }else{
+                    selected = '';
+                }
             %>
-
-            <option<%= selected %>>
-                <%= types[i] %>
-            </option>
-             <%   }    %>
+                <option<%= selected %>>
+                    <%= types[i] %>
+                </option>
+             <% } %>
         </select>
     </div>
 
@@ -46,6 +47,7 @@
         <lable for="orderDetail">Item: </lable>
         <select name="orderItem" id="orderItem" required>
             <%
+            //set array of items, loop through as user options and selects current order option
             var types = ['Knitted Adult Hat', 'Knitted Child Hat', 'Knitted Scarf'];
             var selected= '';
             for(var i=0; i<types.length; i++){
@@ -55,10 +57,10 @@
                     selected = '';
                 }
             %>
-            <option<%= selected %>>
-                <%= types[i] %>
-            </option>
-            <%   }    %>
+                <option<%= selected %>>
+                    <%= types[i] %>
+                </option>
+            <% } %>
         </select>
     </div>
 
@@ -66,7 +68,8 @@
         <lable for="orderColour">Colour:</lable>
         <select name="orderColour" id="orderColour" required>
             <%
-            var types = ['White', 'Black', 'Brown'];
+            //set array of colours, loop through as user options and selects current order option
+            var types = ['White', 'Black', 'Brown', 'Grey', 'Orange', 'Navy'];
             for(var i=0; i<types.length; i++){
                 if(types[i] == order.orderColour){
                     selected = ' selected';
@@ -75,10 +78,10 @@
                 }
             %>
 
-            <option<%= selected %>>
-                <%= types[i] %>
-            </option>
-            <%   }    %>
+                <option<%= selected %>>
+                    <%= types[i] %>
+                </option>
+            <% } %>
         </select>
     </div>
 
@@ -86,6 +89,7 @@
         <lable for="orderUnit">Quantity: </lable>
         <select name="orderUnit" id="orderUnit" required>
             <%
+            //set array of amount quantity, loop through as user options and selects current order option
             var types = [ 1, 2, 3, 4, 5];
             var selected= '';
             for(var i=0; i<types.length; i++){
@@ -96,10 +100,10 @@
                 }
             %>
 
-            <option<%= selected %>>
-                <%= types[i] %>
-            </option>
-            <%   }    %>
+                <option<%= selected %>>
+                    <%= types[i] %>
+                </option>
+            <% } %>
         </select>
     </div>
 
@@ -107,7 +111,8 @@
         <lable for="orderAddon">Finish: </lable>
         <select name="orderAddon" id="orderAddon">
             <%
-            var types = ['Beaver Fur Pom Pom', 'Raccoon Fur Pom Pom', 'Coyote Fur Pom Pom', 'White Fox Fur Pom Pom', 'Red Fox Fur Pom Pom'];
+            //set array of addons, loop through as user options and selects current order option
+            var types = ['None', 'Beaver Fur Pom Pom', 'Raccoon Fur Pom Pom', 'Coyote Fur Pom Pom', 'White Fox Fur Pom Pom', 'Red Fox Fur Pom Pom'];
             var selected= '';
             for(var i=0; i<types.length; i++){
                 if(types[i] == order.orderAddon){
@@ -117,10 +122,10 @@
                 }
             %>
 
-            <option<%= selected %>>
-                <%= types[i] %>
-            </option>
-            <%   }    %>
+                <option<%= selected %>>
+                    <%= types[i] %>
+                </option>
+            <% } %>
         </select>
     </div>
 

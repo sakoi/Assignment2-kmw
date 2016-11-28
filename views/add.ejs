@@ -2,6 +2,7 @@
 
 <h1><%= title %></h1>
 
+<!-- new order form -->
 <form method="post">
     <div>
         <label for="firstName">Customer First Name:</label>
@@ -22,10 +23,11 @@
         <lable for="paymentType">Payment Method: </lable>
         <select name="paymentType" class="dropDown" id="paymentType" required>
             <%
-            var types = ['Interact Debt', 'MasterCard', 'Visa'];
+            //set array of payment types and loop through them as user options
+            var types = ['Cash', 'Interact Debt', 'MasterCard', 'Visa'];
             for(var i=0; i<types.length; i++){ %>
-            <option><%= types[i] %></option>
-            <%   }    %>
+                <option><%= types[i] %></option>
+            <% } %>
         </select>
     </div>
 
@@ -34,10 +36,11 @@
         <lable for="orderDetail">Item: </lable>
         <select name="orderItem" class="dropDown" id="orderItem" required>
             <%
+            //set array of items and loop throught them as user options
             var types = ['Knitted Adult Hat', 'Knitted Child Hat', 'Knitted Scarf'];
             for(var i=0; i<types.length; i++){ %>
-            <option><%= types[i] %></option>
-            <%   }    %>
+                <option><%= types[i] %></option>
+            <% } %>
         </select>
     </div>
 
@@ -45,20 +48,22 @@
         <lable for="orderColour">Colour:</lable>
         <select name="orderColour" class="dropDown" id="orderColour" required>
             <%
+            //set array of colours and loop through them as user options
             var types = ['White', 'Black', 'Brown', 'Grey', 'Orange', 'Navy'];
             for(var i=0; i<types.length; i++){ %>
-            <option><%= types[i] %></option>
-            <%   }    %>
+                <option><%= types[i] %></option>
+            <% } %>
         </select>
     </div>
     <div>
         <lable for="orderUnit">Quantity: </lable>
         <select name="orderUnit" class="dropDown" id="orderUnit" required>
             <%
+            //set array of quanitity amounts and loop through them as user options
             var types = [ 1, 2, 3, 4, 5];
             for(var i=0; i<types.length; i++){ %>
-            <option><%= types[i] %></option>
-            <%   }    %>
+                <option><%= types[i] %></option>
+            <% } %>
         </select>
     </div>
 
@@ -66,12 +71,11 @@
         <lable for="orderAddon">Finish: </lable>
         <select name="orderAddon" class="dropDown" id="orderAddon">
             <%
-            var types = ['Beaver Fur Pom Pom', 'Raccoon Fur Pom Pom', 'Coyote Fur Pom Pom', 'White Fox Fur Pom Pom', 'Red Fox Fur Pom Pom'];
-
+            //set array of item addons and loop through them as user options
+            var types = ['None', 'Beaver Fur Pom Pom', 'Raccoon Fur Pom Pom', 'Coyote Fur Pom Pom', 'White Fox Fur Pom Pom', 'Red Fox Fur Pom Pom'];
             for(var i=0; i<types.length; i++){ %>
-
-            <option><%= types[i] %></option>
-            <%   }    %>
+                <option><%= types[i] %></option>
+            <% } %>
         </select>
     </div>
 

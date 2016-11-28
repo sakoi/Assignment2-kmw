@@ -1,15 +1,19 @@
 <% include partials/header.ejs %>
 <div class="container">
-<h1><%= title %></h1>
 
+    <h1><%= title %></h1>
+
+    <!-- if user is login, display add new order link -->
     <% if (user) { %>
         <a href="orders/add">Add New Order</a>
     <% } %>
 
-    <form id="searchBar">
+    <!-- Search bar for orders, find by name -->
+    <form id="searchBar" onsubmit="return false;">
         <br/><input type="text" name="search" id="search" placeholder="Search by name...">
     </form>
 
+    <!-- Table of orders, if user is login, display edit and delete buttons -->
     <table>
         <tr>
             <th>Name</th>

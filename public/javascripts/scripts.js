@@ -1,4 +1,4 @@
-/* Confirms deletion of order */
+/* Confirms that user wishes to delete selected order*/
 $('.confirmation').on('click', function() {
     return confirm('Are you sure you want to delete this order?');
 });
@@ -29,7 +29,6 @@ $("#search").on("keyup", function() {
         if (index !== 0) {
 
             $row = $(this);
-
             var id = $row.find("td:first").text().toUpperCase();
 
             if (id.indexOf(value) !== 0) {
