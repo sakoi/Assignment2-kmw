@@ -21,7 +21,7 @@ var validator = $('#registerForm').validate({
     }
 });
 
-/* Search Bar */
+/* Search Bar - compare the input sting and the first row of the table (firstName + lastName)  */
 $("#search").on("keyup", function() {
     var value = $(this).val().toUpperCase();
 
