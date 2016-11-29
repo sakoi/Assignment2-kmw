@@ -13,7 +13,7 @@ function isLoggedIn(req, res, next) {
     }
 }
 
-/* Get handlerr  fo/orders */
+/* Get handler for /orders */
 router.get('/', function (req, res, next) {
    Order.find(function(err, orders){
        if(err){
@@ -93,12 +93,11 @@ router.get('/:_id', isLoggedIn, function(req, res, next) {
     });
 });
 
-/* POST /orders/:_id*/
+/* POST /orders/:_id */
 router.post('/:_id', isLoggedIn, function(req, res, next) {
     // get the id from the url
     var _id = req.params._id;
 
-    // instantiate a new Game object & populate it from the form
     var order = new Order( {
         _id: _id,
         firstName: req.body.firstName,

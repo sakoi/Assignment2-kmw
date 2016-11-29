@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="/stylesheets/masterStyle.css"/>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <!-- css -->
+
 </head>
 <body>
 
@@ -14,9 +14,12 @@
             <li><a href="/">Home</a></li>
             <li><a href="/orders">Orders</a></li>
 
+            <!-- if user is not logged in -->
             <% if (!user) { %>
             <li><a href="/register">Register</a></li>
             <li><a href="/login">Login</a></li>
+
+            <!-- if user is logged in -->
             <% }else{%>
             <li><a href="/logout">Logout</a></li>
             <% } %>

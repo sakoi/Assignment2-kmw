@@ -53,9 +53,6 @@ router.get('/login', function(req, res, next) {
         user: req.user
 
     });
-
-    // clear the messages out of the session
-    //req.session.messages = null;
 });
 
 /* POST handler for /login */
@@ -71,18 +68,16 @@ router.get('/logout', function(req, res, next) {
     res.redirect('/login');
 });
 
-/*GET FACBOOK!!!! */
+/*GET handler for /facebook */
 router.get('/facebook', passport.authenticate('facebook'), function(req, res, next){
 });
 
-/* FB CALL BACK!! */
+/*CALLBACK for /facebook */
 router.get('/facebook/callback', passport.authenticate('facebook', {
     failureRedirect: 'login',
     failureMessage: 'Invalid Login'
 }), function(req,res,nex){
-//show cames page
     res.redirect('/orders')
 });
-
 
 module.exports = router;

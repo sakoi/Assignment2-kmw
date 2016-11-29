@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 
+//Create Order Schema that saves the parameters
+//first name, last name, address, payment type, order item, order colour, quantity, addon, and comment
 var orderSchema = new mongoose.Schema({
     firstName: {
         type: String,

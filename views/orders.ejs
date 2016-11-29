@@ -13,7 +13,7 @@
         <br/><input type="text" name="search" id="search" placeholder="Search by name...">
     </form>
 
-    <!-- Table of orders, if user is login, display edit and delete buttons -->
+    <!-- Table of orders -->
     <table>
         <tr>
             <th>Name</th>
@@ -39,6 +39,7 @@
             <td><%= orders[i].orderUnit %></td>
             <td><%= orders[i].orderAddon %></td>
             <td><%= orders[i].orderComment %></td>
+            <!-- if user is login, display edit and delete buttons -->
             <% if (user) { %>
             <td><a class="button" href="/orders/<%= orders[i]._id %>">Edit</a></td>
             <td><a href="/orders/delete/<%= orders[i]._id %>" class="confirmation">Delete</a></td>
